@@ -2,13 +2,9 @@ import tensorflow as tf
 import os
 import numpy as np
 from matplotlib import pyplot as plt
-from tensorflow.keras.layers import Conv2D, BatchNormalization, Activation, MaxPool2D, Dropout, Flatten, Dense
-from tensorflow.keras import Model
 import VGG
-
-
+# 使用GPU加速的，没有GPU的记得把下面注释掉
 os.environ["CUDA_VISIBLE_DEVICES"]="0"
-from tensorflow.keras import  datasets
 config = tf.compat.v1.ConfigProto()
 config.gpu_options.allow_growth = True
 sess = tf.compat.v1.Session(config=config)
@@ -63,13 +59,13 @@ plt.ylabel('accuracy')
 plt.plot(mymodel.history['val_sparse_categorical_accuracy'])
 plt.show()
 
-#输出测试测试集数据
-result=model.evaluate(x_test,y_test)
-print('='*50)
-print(result)
-#输出训练集测试数据
-result=model.evaluate(x_train,y_train)
-print('='*50)
-print(result)
+# #输出测试测试集数据
+# result=model.evaluate(x_test,y_test)
+# print('='*50)
+# print(result)
+# #输出训练集测试数据
+# result=model.evaluate(x_train,y_train)
+# print('='*50)
+# print(result)
 
 

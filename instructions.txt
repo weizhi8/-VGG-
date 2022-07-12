@@ -1,0 +1,11 @@
+VGG.py
+	这个是框架，最好不要改动！
+shoxieshujuji_fenglei
+	这个是把数据集，预处理贴上标签
+data_Random_Segmentation.py
+	切分数据集
+Main_Dy
+	训练模型
+biaozhun__cheshi
+	模型的测测和使用
+作者李佳成，邮箱2275716724@qq.com，仅用于学习使用！

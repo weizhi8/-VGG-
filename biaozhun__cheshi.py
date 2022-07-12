@@ -1,18 +1,7 @@
 import matplotlib.pyplot as plt
-import tensorflow as tf
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import Model
-import os
-from keras.models import load_model
 import VGG
 import tensorflow as tf
-import random
-from tensorflow.keras import datasets
-import tensorflow as tf
 import cv2
-import numpy as np
-
 mymodel = VGG.VGG16()
 
 Fruit =r'D:\Fruit\text\3.jpeg'
@@ -31,9 +20,7 @@ mymodel.load_weights('sbie.h5')
 # mymodel.summary()
 X_train=X_train[tf.newaxis,]
 print(X_train.shape)
-
 a = mymodel.predict(X_train)
-
 b = tf.argmax(a,axis=1)
 c=tf.print(b)
 
@@ -49,21 +36,3 @@ if b == 3:
 plt.pause(1)
 plt.close()
 
-
-
-
-
-
-
-# import VGG
-
-# mymodel = VGG.VGG16()
-# mymodel.summary()
-#
-# mymodel.compile(optimizer='adam',
-#               loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
-#               metrics=['sparse_categorical_accuracy'])
-#
-#
-# mymodel.load_weights(r'sb.h5')
-# # print(mymodel.evaluate)
